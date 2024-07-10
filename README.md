@@ -1,16 +1,8 @@
-# flutter_pokeapi
+# flutter_api
 
-A new Flutter project.
+## Capturas del Programa:
+![image](https://github.com/brittanypallasco2003/flutter_api/assets/117743650/ed422d02-567a-4688-a54b-00e23258e0d4)
+![image](https://github.com/brittanypallasco2003/flutter_api/assets/117743650/5b5f5d32-b031-43e3-a138-cffcc4a194b1)
+![image](https://github.com/brittanypallasco2003/flutter_api/assets/117743650/d6357ef8-f31a-49ba-8a6b-e5b2b790b972)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
