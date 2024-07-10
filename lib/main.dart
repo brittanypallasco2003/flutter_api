@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'providers/dog_provider.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => DogProvider()),
       ],
       child: MaterialApp(
-        title: 'Flutter Dog Image Demo',
+        title: 'Perritos Api',
         home: DogImageScreen(),
       ),
     );
@@ -29,20 +28,43 @@ class DogImageScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Imágenes Random de Perritos'),
+        title: Text('Fotos Random de Perritos'),
       ),
-      body: Center(
-        child: provider.isLoading
-            ? CircularProgressIndicator()
-            : provider.dogImage != null
-                ? Image.network(provider.dogImage!.imageUrl)
-                : Text('¡Presiona el botón de refresh para ver perritos!'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          provider.fetchRandomDogImage();
-        },
-        child: Icon(Icons.refresh),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                provider.isLoading
+                    ? CircularProgressIndicator()
+                    : provider.dogImage != null
+                        ? Column(
+                            children: [
+                              Image.network(provider.dogImage!.imageUrl),
+                              SizedBox(height: 20),
+                              Text(
+                                'Link de la imagen: ${provider.dogImage!.imageLink}',
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ],
+                          )
+                        : Text(
+                            '¡Presiona el botón de refresh para ver fotos random de perritos!',
+                            textAlign: TextAlign.center,
+                          ),
+                SizedBox(height: 20),
+                FloatingActionButton(
+                  onPressed: () {
+                    provider.fetchRandomDogImage();
+                  },
+                  child: Icon(Icons.refresh),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../services/dog_service.dart';
 import '../models/dog.dart';
 
+// Instancia global del logger
+
 
 class DogProvider with ChangeNotifier {
   final DogService _dogService = DogService();
@@ -15,14 +17,17 @@ class DogProvider with ChangeNotifier {
     _isLoading = true;
     notifyListeners();
     
+
     try {
       _dogImage = await _dogService.fetchRandomDogImage();
-
+      
     } catch (e) {
       _dogImage = null;
+      
     } finally {
       _isLoading = false;
       notifyListeners();
     }
   }
 }
+

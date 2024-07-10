@@ -1,4 +1,3 @@
-// models/dog.dart
 class Dog {
   final String imageUrl;
   final String imageLink;
